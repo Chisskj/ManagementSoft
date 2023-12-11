@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-mulish);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.side-bar {
+  transition: all 0.3s linear;
+  transition-duration: 500ms;
+}
+.loader {
+  border-top-color: #3d405b;
+  -webkit-animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
+}
+/* .ReactCodeInput input {
+  display: flex;
+  gap: 16px;
+} */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@layer components {
+  .hero-auth {
+    background-image: url(../assets/images/bgreal.webp);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@layer components {
+  .nav-search {
+    @apply right-[25%] md:right-[25%] lg:right-[5%] flex w-1/2 md:w-80 bg-tickitz-primary fixed z-50 md:z-30 rounded-md;
+    transition: 0.2s linear;
+  }
+
+  .nav-mobile {
+    @apply w-screen h-[200vh] z-50 gap-y-10 py-10 flex flex-col top-16 absolute bg-white;
+    transition: 0.2s linear;
+  }
+
+  .achievement-card-bg {
+    background-image: url("../assets/images/achievement-card.png");
+  }
+
+  .progress::-moz-progress-bar {
+    background-color: #f5f6f8;
+  }
+
+  .progress:indeterminate::after {
+    background-color: #f5f6f8;
+  }
+
+  .progress::-webkit-progress-bar {
+    background-color: #f5f6f8;
+  }
+
+  .progress::-webkit-progress-value {
+    background-color: #3d405b;
+  }
+}
