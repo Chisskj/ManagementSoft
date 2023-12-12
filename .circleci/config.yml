@@ -4,5 +4,7 @@ jobs:
     docker:
       - image: circleci/node:14
     steps:
-      - checkout
-      - run: echo "Hello, CircleCI!"
+      - run: 
+        name: The First Step
+        command: |
+          echo "Hello, CircleCI!"
